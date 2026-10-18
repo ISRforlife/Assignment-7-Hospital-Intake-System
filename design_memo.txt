@@ -1,0 +1,9 @@
+Hospital Data Structures - Design Memo
+
+For this assignment, I built two systems for a hospital using a tree and a priority queue. The doctor reporting system uses a binary tree because the doctors have a clear management structure. Each doctor can have a left and right report, which makes it easier to show who reports to whom. I also used recursion to search through the tree when adding a doctor under a specific manager.
+
+The three traversal methods go through the same tree in different orders. Preorder visits the manager first, so I think it would be useful for showing the reporting structure starting with leadership. Inorder visits the left side, then the manager, then the right side. It could be useful when a program needs a consistent way to display the whole tree, although it does not automatically sort doctors by name. Postorder visits the reports before the manager, which could be helpful when checking whether all the teams have finished their work before the manager signs off.
+
+For the emergency system, I used a min-heap because patients should be treated based on urgency instead of arrival time. A lower urgency number means a higher priority. When a patient is added or removed, the heap reorganizes itself so the most urgent patient stays at the top. One thing I had to pay attention to was comparing the correct parent and child positions after each change.
+
+Overall, this assignment showed me that different problems need different data structures. The tree helps explain relationships, while the heap helps decide who should be handled next.
